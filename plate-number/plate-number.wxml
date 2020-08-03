@@ -1,0 +1,31 @@
+<!--plate-number.wxml-->
+<view class="container">
+  <view class="plate-number">
+    <view class="content">
+      <text wx:for="{{7}}" wx:key="index" class="text {{currIndex === index ? 'active' : ''}}" bindtap="_conClick" data-index="{{index}}">{{plateNumber[index]}}</text>
+      <text class="text {{currIndex === 7 ? 'active' : ''}} {{isEnergy ? 'isEnergy' : ''}}" bindtap="_conClick" data-index="{{7}}">{{isEnergy ? plateNumber[7] : '新能源'}}</text>
+    </view>
+    <view class="keyboard {{keyboardShow ? 'show' : ''}}">
+      <view class="submit-box"><button class="button">完成</button></view>
+      <view class="keyboard-content" wx:if="{{keyboard === 'txt'}}">
+        <view class="keyboard-row" wx:for="{{keyTxt}}" wx:key="index">
+          <button class="button keyboard-row-item" wx:for="{{item.name}}" wx:key="index" bindtap="_keyboardClick" data-key="{{item}}">{{item}}</button>
+        </view>
+        <view class="keyboard-row keyboard-bottom">
+          <button class="button keyboard-row-item" bindtap="_keyboardClick" data-key="新">新</button>
+          <button class="button keyboard-row-item" bindtap="_clearClick"><mp-icon icon="sending" size="40" /></button>
+        </view>
+      </view>
+      <view class="keyboard-content" wx:if="{{keyboard === 'number'}}">
+        <view class="keyboard-row" wx:for="{{keyNumber}}" wx:for-index="rowsIndex" wx:key="rowsIndex">
+          <button class="button keyboard-row-item" wx:for="{{item.name}}" wx:key="index" bindtap="_keyboardClick" data-key="{{item}}" disabled="{{numberDisable && rowsIndex === 0}}">{{item}}</button>
+        </view>
+        <view class="keyboard-row keyboard-bottom">
+          <button class="button keyboard-row-item" wx:for="{{keyNumberBottom}}" wx:key="index" bindtap="_keyboardClick" data-key="{{item}}">{{item}}</button>
+          <button class="button keyboard-row-item" bindtap="_clearClick"><mp-icon icon="sending" size="40" /></button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<slot></slot>

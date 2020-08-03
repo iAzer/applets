@@ -1,0 +1,139 @@
+/**plate-number.wxss**/
+
+.plate-number {
+  margin: 0 auto;
+  text-align: center;
+}
+.plate-number .content {
+  display: inline-block;
+  padding: 2rpx 0;
+  font-size: 0;
+  border: 2rpx solid #cccccc;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+.plate-number .text {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 72rpx;
+  height: 76rpx;
+  margin-right: 2rpx;
+  padding: 0;
+  line-height: 76rpx;
+  background-color: transparent;
+  position: relative;
+  vertical-align: middle;
+  font-size: 40rpx;
+}
+.plate-number .text::after {
+  content: "";
+  display: inline-block;
+  border: 0;
+  width: 2rpx;
+  height: 50%;
+  background-color: #cccccc;
+  position: absolute;
+  top: 50%;
+  right: -2rpx;
+  transform: translateY(-50%);
+}
+.plate-number .text:last-child {
+  margin-right: 0;
+  font-size: 20rpx;
+  color: #999999;
+}
+.plate-number .text.isEnergy {
+  font-size: 40rpx;
+  color: #000000;
+}
+.plate-number .text:last-child::after {
+  display: none;
+}
+.plate-number .text:nth-child(2) {
+  margin-right: 8rpx;
+}
+.plate-number .text:nth-child(2)::after {
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 8rpx;
+  right: -8rpx;
+}
+.plate-number .text.active {
+  border: 2rpx solid #ffc200;
+  border-radius: 8rpx;
+}
+.plate-number .text.active::after {
+  right: -4rpx;
+}
+.plate-number .text:nth-child(2).active::after {
+  right: -10rpx;
+}
+
+/* 键盘 */
+.keyboard {
+  width: 100%;
+  padding-top: 36rpx;
+  background-color: #eeeeee;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  transform: translate3d(0, 100%, 0);
+  transition: all .3s;
+}
+.keyboard.show {
+  transform: translate3d(0, 0, 0);
+}
+.keyboard .button {
+  display: inline-block;
+  padding: 0;
+  width: 64rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+.keyboard .button::after {
+  display: none;
+}
+.keyboard .submit-box {
+  padding: 0 20rpx;
+  text-align: right;
+  background-color: #ffffff;
+}
+.keyboard .submit-box .button {
+  width: auto;
+  vertical-align: middle;
+  color: #ffc200;
+  border: 0;
+}
+.keyboard .submit-box .button::after {
+  border: 0;
+}
+
+.keyboard .keyboard-content {
+  padding: 16rpx 0 0;
+}
+.keyboard .keyboard-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16rpx;
+  margin-bottom: 20rpx;
+  font-size: 0;
+  color: #333333;
+}
+.keyboard .keyboard-row.keyboard-bottom {
+  justify-content: flex-start;
+}
+.keyboard .keyboard-row .button {
+  font-size: 40rpx;
+}
+.keyboard .keyboard-row.keyboard-bottom .button {
+  margin: 0 5rpx;
+}
+.keyboard .keyboard-row.keyboard-bottom .button:last-child {
+  width: 134rpx;
+  line-height: 0;
+  margin-left: auto;
+}
