@@ -13,5 +13,4 @@
 
 ## 示例效果图
 
-![index](https://github.com/xiaoshengxianjun/wm-components/blob/master/demo/plateNumberKeyboardDemoImg1.png)
-![index](https://github.com/xiaoshengxianjun/wm-components/blob/master/demo/plateNumberKeyboardDemoImg2.png)
+![示例效果图](https://gitee.com/iazer/applets/raw/master/plate-number/plate-number.gif)

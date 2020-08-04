@@ -5,4 +5,4 @@
 
  * 车牌号专属键盘 <br>
  
-![index](https://github.com/xiaoshengxianjun/wm-components/blob/master/demo/plateNumberKeyboardDemoImg1.png)
+![示例效果图](https://gitee.com/iazer/applets/raw/master/plate-number/plate-number.gif)
