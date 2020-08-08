@@ -46,7 +46,9 @@ Component({
         currIndex: formatIndex
       })
 
-      this._exceptional(this.data.currIndex)
+      if(this.data.currIndex !== 0) {
+        this._exceptional(this.data.currIndex)
+      }
     },
     _exceptional: function(index) { //不同键盘状态处理
       // 重置
