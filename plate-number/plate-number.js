@@ -106,11 +106,18 @@ Component({
         this.setData({plateStatus: false})
         this.triggerEvent('plate', { plateNumber: false });
       }
+    },
+    keyboardStatus(status) {
+      this.setData({
+        keyboardShow: status,
+        currIndex: '',
+        keyboard: 'txt'
+      })
     }
   },
   pageLifetimes: {
     show: function() {
-      this.setData({keyboardShow: true,currIndex: 0})
+      this.setData({keyboardShow: true,currIndex: 0,keyboard: 'txt'})
     }
   }
 })
